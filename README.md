@@ -20,11 +20,11 @@ Download Win32DiskImager: http://sourceforge.net/projects/win32diskimager/files/
 - Download Raspian Lite: https://downloads.raspberrypi.org/raspbian_lite_latest and unpack the zip file. See chapter Quick route to skip ahead.
 - Insert your SD Card and then run Win32DiskImager.exe. Make sure your SD Card drive is selected.  Select the '#.img' image file from the extracted zip file and then press write.  Once completed, insert your SD card into the RPi, attach an ethernet cable a monitor before you start up. Once started the IP address will be printed in the console.
 
-If using a button and LED with your RPi3 (recommended to get feed back and control) follow the wiring diagram here: https://github.com/JoakimHellberg/AppIoT-RPi3-Integration/blob/master/wiring.png 
+If using a button and LED with your RPi3 (recommended to get feedback and control) follow the wiring diagram here: https://github.com/JoakimHellberg/AppIoT-RPi3-Integration/blob/master/wiring.png 
 
 ## Install AppIoT client and dependencies
 - Startup WinSCP and connect to the IP address of the RPi. Default username and password for raspian is pi/raspberry.
-- Transer files inside the install folder https://github.com/JoakimHellberg/AppIoT-RPi3-Integration-Start/tree/master/Install to the /home/pi/ folder of the RPi3.
+- Transer files inside the install folder https://github.com/ApplicationPlatformForIoT/RPi3-Integration/tree/master/Install to the /home/pi/ folder of the RPi3.
 - Startup Putty and connect to the IP address of the RPi. Default username and password for raspian is pi/raspberry.
 - Make the Setup.sh script executable by using the following command: chmod 755 ./Setup.sh
 - Install AppIoT client by executing the Setup script: ./Setup.sh. This will install dependencies and setup the home directory (/home/pi/SENSATION_HOME). Once completed, the RPi will reboot.
