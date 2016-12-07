@@ -20,7 +20,7 @@ Download Win32DiskImager: http://sourceforge.net/projects/win32diskimager/files/
 - Download Raspian Lite: https://downloads.raspberrypi.org/raspbian_lite_latest and unpack the zip file. See chapter Quick route to skip ahead.
 - Insert your SD Card and then run Win32DiskImager.exe. Make sure your SD Card drive is selected.  Select the '#.img' image file from the extracted zip file and then press write.  Once completed, insert your SD card into the RPi, attach an ethernet cable a monitor before you start up. Once started the IP address will be printed in the console.
 
-If using a button and LED with your RPi3 (recommended to get feedback and control) follow the wiring diagram here: https://github.com/JoakimHellberg/AppIoT-RPi3-Integration/blob/master/wiring.png 
+If using a button and LED with your RPi3 (recommended to get feedback and control) follow the wiring diagram here: https://github.com/ApplicationPlatformForIoT/RPi3-Integration/blob/master/wiring.png
 
 ## Install AppIoT client and dependencies
 - Startup WinSCP and connect to the IP address of the RPi. Default username and password for raspian is pi/raspberry.
