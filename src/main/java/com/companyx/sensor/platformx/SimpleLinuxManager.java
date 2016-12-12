@@ -90,8 +90,15 @@ public class SimpleLinuxManager {
 	        	String infoPart = st.nextToken();
 	        	if(infoPart.contains(":")) {
 	        		StringTokenizer st2 = new StringTokenizer(infoPart, ":");
-	        		String key = st2.nextToken();
-	        		String value = st2.nextToken();
+	        		String key = "";
+	        		String value = "";
+	        		
+	        		if(st2.hasMoreTokens()) {
+		        		key = st2.nextToken();
+	        		}
+	        		if(st2.hasMoreTokens()) {
+		        		value = st2.nextToken();
+	        		}
 	        		 
 	        		if(key.equalsIgnoreCase("addr")) {
 	        			result.setIpAddress(value);

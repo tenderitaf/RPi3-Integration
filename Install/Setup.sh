@@ -37,9 +37,8 @@ sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_65/bin
 mkdir /home/pi/SENSATION_HOME
 mkdir /home/pi/SENSATION_HOME/logs
 mv sensation-client.properties /home/pi/SENSATION_HOME/sensation-client.properties
-mv ticket.json /home/pi/SENSATION_HOME/ticket.json
 mv Gateway.sh /home/pi/SENSATION_HOME/Gateway.sh
-mv RPiDemoGateway-Complete-0.9-jar-with-dependencies.jar /home/pi/SENSATION_HOME/RPiDemoGateway-Complete-0.9-jar-with-dependencies.jar
+mv RPiDemoGateway-Complete-0.9.1-jar-with-dependencies.jar /home/pi/SENSATION_HOME/RPiDemoGateway-Complete-0.9.1-jar-with-dependencies.jar
 
 # make start script executable
 chmod 755 /home/pi/SENSATION_HOME/Gateway.sh

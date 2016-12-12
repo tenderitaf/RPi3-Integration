@@ -3,6 +3,7 @@ package com.ericsson.appiot.demo.integration.rpi3;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.ericsson.appiot.gateway.connector.jsr82connector.JSR82Connector;
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalInput;
@@ -17,7 +18,7 @@ import se.sigma.sensation.gateway.sdk.client.SensationClient;
 import se.sigma.sensation.gateway.sdk.client.data.RegistrationResponseCode;
 import se.sigma.sensation.gateway.sdk.deployment.DeploymentApplicationListener;
 import se.sigma.sensation.gateway.sdk.deployment.DeploymentApplicationManager;
-import se.sigma.sensation.gateway.sdk.deployment.bluetooth.JSR82Connector;
+
 
 public class Gateway {
 	private final Logger logger = Logger.getLogger(this.getClass().getName()); 
@@ -38,17 +39,21 @@ public class Gateway {
 		platform = new RPi3Platform();		
 		sensationClient = new SensationClient(platform); 
 		sensationClient.start();
-		
+	
+		sensationClient.requestDataCollectorConfigurationUpdate();
+
 		// Define GPIO pins for button and led.
 		final GpioController gpio = GpioFactory.getInstance();
 		final GpioPinDigitalInput buttonPin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_28, PinPullResistance.PULL_UP);
 		final GpioPinDigitalOutput ledPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_29);
 		
-		// Setup deployment application manager to listen on bluetooth
+		// Setup deployment application manager to listen on bluetooth rfcomm
 		deploymentApplicationManager = new DeploymentApplicationManager(
 				new MyDeploymentApplicationListener(ledPin), 
 				new JSR82Connector() , 
 				platform);
+
+		//deploymentApplicationManager.setToken(token); // "8lggvlXhtD5LBamLQJqRevNcqX7mtjk7fRbrWwbTEwU=";
 		
 		
 		// If button is pressed, startup deployment application manager.

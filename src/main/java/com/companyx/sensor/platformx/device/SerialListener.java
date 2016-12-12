@@ -19,6 +19,7 @@ public class SerialListener implements SerialDataListener {
 	public void dataReceived(SerialDataEvent event) {
        	try {
 			String msg = new String(event.getData().getBytes(), "UTF-8");
+			logger.log(Level.FINE, String.format("Data received from serial device: %s", msg));
 			StringTokenizer stRows = new StringTokenizer(msg, "\n");
 			while(stRows.hasMoreTokens()) {
 				String row = stRows.nextToken();

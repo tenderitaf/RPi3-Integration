@@ -26,7 +26,6 @@ import se.sigma.sensation.gateway.sdk.client.data.UpdatePackageResponseCode;
 import se.sigma.sensation.gateway.sdk.client.registry.SensorCollectionRegistration;
 import se.sigma.sensation.gateway.sdk.client.registry.SensorCollectionRegistry;
 import se.sigma.sensation.gateway.sdk.deployment.DeploymentApplicationConnector;
-import se.sigma.sensation.gateway.sdk.deployment.bluetooth.JSR82Connector;
 
 /**
  * @author Joakim Hellberg
@@ -42,7 +41,7 @@ public class RPi3Platform implements Platform {
 
 	private PlatformXManager manager;
 	private SensationClient client;
-	private DeploymentApplicationConnector bluetoothConnector;
+
 	
 	/**
 	 * Initializes the platform.
@@ -55,7 +54,6 @@ public class RPi3Platform implements Platform {
 	public void init(final SensationClient client) throws PlatformInitialisationException {
 		this.client = client;
 		this.manager = new PlatformXManager();
-		bluetoothConnector = new JSR82Connector();
 		manager.addListener(new MeasurementHandler(client));
 	}
 
@@ -179,7 +177,6 @@ public class RPi3Platform implements Platform {
 	 */
 	public DataCollectorStatus updateDataCollectorStatus() {
 		DataCollectorStatus result = new DataCollectorStatus();
-		result.setBluetoothMacAddress(bluetoothConnector.getBluetoothAddress());
 		result.setHardwareTypeId(AppIoTContract.RPi3_HARDWARE_TYPE_ID);
 		result.setFirmwareVersion(FIRMWARE_VERSION);
 		result.setHardwareVersion(HARDWARE_VERSION);
@@ -341,6 +338,6 @@ public class RPi3Platform implements Platform {
 	 * @param properties @see {@link SensationClientProperties}
 	 */
 	public void updateDataCollectorSettings(SensationClientProperties properties) {
-		// TODO: Handle updated gateway settings		
+				
 	}
 }
