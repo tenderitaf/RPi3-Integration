@@ -25,7 +25,6 @@ import se.sigma.sensation.gateway.sdk.client.data.UpdatePackage;
 import se.sigma.sensation.gateway.sdk.client.data.UpdatePackageResponseCode;
 import se.sigma.sensation.gateway.sdk.client.registry.SensorCollectionRegistration;
 import se.sigma.sensation.gateway.sdk.client.registry.SensorCollectionRegistry;
-import se.sigma.sensation.gateway.sdk.deployment.DeploymentApplicationConnector;
 
 /**
  * @author Joakim Hellberg

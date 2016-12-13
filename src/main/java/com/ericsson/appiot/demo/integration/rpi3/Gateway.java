@@ -53,7 +53,7 @@ public class Gateway {
 				new JSR82Connector() , 
 				platform);
 
-		//deploymentApplicationManager.setToken(token); // "8lggvlXhtD5LBamLQJqRevNcqX7mtjk7fRbrWwbTEwU=";
+		//deploymentApplicationManager.setToken(token); 
 		
 		
 		// If button is pressed, startup deployment application manager.
@@ -77,9 +77,6 @@ public class Gateway {
 			catch(InterruptedException e) {}
 		}
 	}	
-	
-
-
 	
 	private class MyDeploymentApplicationListener implements DeploymentApplicationListener, Runnable {
 
