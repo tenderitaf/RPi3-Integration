@@ -93,10 +93,10 @@ public class Gateway {
 			connected = true;
 		}
 
-		public void onRegistrationTicket(RegistrationTicket registrationTicket) {
+		public RegistrationResponseCode onRegistrationTicket(RegistrationTicket registrationTicket) {
 			RegistrationResponseCode responseCode = sensationClient.register(registrationTicket);
-			deploymentApplicationManager.sendGatewayAcknowledge(responseCode);
 			deploymentApplicationManager.stop();
+			return responseCode;
 		}
 
 		public void onStart() {
